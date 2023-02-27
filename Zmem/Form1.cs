@@ -212,5 +212,10 @@ namespace Zmem
             text.SelectionColor = colorDialog1.Color;
             text.Focus();
         }
+
+        private void ToolStripButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

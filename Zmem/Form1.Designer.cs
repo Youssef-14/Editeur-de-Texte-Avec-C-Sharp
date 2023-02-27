@@ -266,8 +266,9 @@
             this.ToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripButton.Image")));
             this.ToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolStripButton.Name = "ToolStripButton";
-            this.ToolStripButton.Size = new System.Drawing.Size(29, 28);
+            this.ToolStripButton.Size = new System.Drawing.Size(29, 24);
             this.ToolStripButton.Text = "&?";
+            this.ToolStripButton.Click += new System.EventHandler(this.ToolStripButton_Click);
             // 
             // toolStripSeparator2
             // 
@@ -283,8 +284,8 @@
             this.imprimerToolStripButton,
             this.toolStripSeparator,
             this.couperToolStripButton,
-            this.copierToolStripButton,
             this.collerToolStripButton,
+            this.copierToolStripButton,
             this.toolStripSeparator1,
             this.ToolStripButton,
             this.toolStripSeparator2,
