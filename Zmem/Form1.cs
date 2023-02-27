@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Zmem
 {
@@ -91,7 +92,8 @@ namespace Zmem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            length.Text = "12";
+            //length.Text = text.Text.Length.ToString();
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -104,23 +106,43 @@ namespace Zmem
 
         }
 
-        private void toolStripButton1_Click_1(object sender, EventArgs e)
+        private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
         {
-            Font old1,new1;
+
+        }
+
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void length_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Font old1, new1;
             old1 = text.SelectionFont;
-            if (old1.Bold)
-            {
-                new1 = new Font(old1, old1.Style & ~FontStyle.Bold);
-            }
-            else
-            {
-                new1 = new Font(old1, old1.Style | FontStyle.Bold);
-            }
+            new1 = new Font(old1.FontFamily, int.Parse(length.Text), old1.Style);
             text.SelectionFont = new1;
             text.Focus();
         }
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            
+        }
 
-        private void toolStripButton2_Click_1(object sender, EventArgs e)
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+
+            Font font = text.Font;
+            Color foreColor = text.ForeColor;
+            Color backColor = text.BackColor;
+            string text1 = text.Text;
+
+            // Définir la police, la couleur du texte et la couleur d'arrière-plan pour le texte imprimé
+            e.Graphics.DrawString(text1, font, new SolidBrush(foreColor), new RectangleF(e.MarginBounds.X, e.MarginBounds.Y, e.MarginBounds.Width, e.MarginBounds.Height));
+        }
+
+        private void italic_Click_1(object sender, EventArgs e)
         {
             Font old1, new1;
             old1 = text.SelectionFont;
@@ -136,7 +158,23 @@ namespace Zmem
             text.Focus();
         }
 
-        private void toolStripButton3_Click(object sender, EventArgs e)
+        private void Bold_Click_1(object sender, EventArgs e)
+        {
+            Font old1, new1;
+            old1 = text.SelectionFont;
+            if (old1.Bold)
+            {
+                new1 = new Font(old1, old1.Style & ~FontStyle.Bold);
+            }
+            else
+            {
+                new1 = new Font(old1, old1.Style | FontStyle.Bold);
+            }
+            text.SelectionFont = new1;
+            text.Focus();
+        }
+
+        private void Underline_Click(object sender, EventArgs e)
         {
             Font old1, new1;
             old1 = text.SelectionFont;
@@ -152,25 +190,26 @@ namespace Zmem
             text.Focus();
         }
 
-        private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
+        private void imprimerToolStripButton_Click(object sender, EventArgs e)
         {
+            // Afficher le dialogue d'impression
+            PrintDialog printDialog = new PrintDialog();
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Configurer le document d'impression
+                printDocument1.DocumentName = "Texte à imprimer";
+                printDocument1.PrinterSettings = printDialog.PrinterSettings;
+                printDocument1.DefaultPageSettings.Margins = new System.Drawing.Printing.Margins(50, 50, 50, 50);
 
+                // Lancer l'impression
+                printDocument1.Print();
+            }
         }
 
-
-        private void toolStripButton4_Click(object sender, EventArgs e)
+        private void Color_Click(object sender, EventArgs e)
         {
             colorDialog1.ShowDialog();
             text.SelectionColor = colorDialog1.Color;
-            text.Focus();
-        }
-
-        private void length_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Font old1, new1;
-            old1 = text.SelectionFont;
-            new1 = new Font(old1.FontFamily, int.Parse(length.Text), old1.Style);
-            text.SelectionFont = new1;
             text.Focus();
         }
     }

@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\bold.ico" />
+    <Content Include="Images\color-palette.ico" />
+    <Content Include="Images\italic.ico" />
+    <Content Include="Images\underline.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
