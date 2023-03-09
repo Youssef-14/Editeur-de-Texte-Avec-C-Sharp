@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace Zmem
+namespace Yte
 {
     public partial class Form1 : Form
     {
@@ -22,8 +22,8 @@ namespace Zmem
         {
             string Text = text.Text;
             saveFileDialog1.InitialDirectory = "C:\\";
-            saveFileDialog1.Filter = "Zmm files (*.zmm)|*.zmm|All files (*.*)|*.*";
-            saveFileDialog1.FileName = "MyFile.zmm";
+            saveFileDialog1.Filter = "Yte files (*.yte)|*.yte|All files (*.*)|*.*";
+            saveFileDialog1.FileName = "MyFile.yte";
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -39,7 +39,7 @@ namespace Zmem
         private void ouvrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openFileDialog1.InitialDirectory = "C:\\";
-            openFileDialog1.Filter = "Zmm files (*.zmm)|*.zmm|All files (*.*)|*.*";
+            openFileDialog1.Filter = "Yte files (*.yte)|*.yte|All files (*.*)|*.*";
             openFileDialog1.FileName = "";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -93,7 +93,6 @@ namespace Zmem
         private void Form1_Load(object sender, EventArgs e)
         {
             length.Text = "12";
-            //length.Text = text.Text.Length.ToString();
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -138,7 +137,6 @@ namespace Zmem
             Color backColor = text.BackColor;
             string text1 = text.Text;
 
-            // Définir la police, la couleur du texte et la couleur d'arrière-plan pour le texte imprimé
             e.Graphics.DrawString(text1, font, new SolidBrush(foreColor), new RectangleF(e.MarginBounds.X, e.MarginBounds.Y, e.MarginBounds.Width, e.MarginBounds.Height));
         }
 
@@ -216,6 +214,16 @@ namespace Zmem
         private void ToolStripButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void manuelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aProposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Page créér par youssef maatoug CopyRight 2023");
         }
     }
 }

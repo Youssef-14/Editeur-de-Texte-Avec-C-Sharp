@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zmem", "Zmem\Zmem.csproj", "{FB5A4EEF-D18F-4070-8A3F-A8121E4485AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YTE", "YTE\YTE.csproj", "{FB5A4EEF-D18F-4070-8A3F-A8121E4485AE}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{0E85873D-63A8-4420-9D38-9B9144F4015C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{FB5A4EEF-D18F-4070-8A3F-A8121E4485AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB5A4EEF-D18F-4070-8A3F-A8121E4485AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB5A4EEF-D18F-4070-8A3F-A8121E4485AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E85873D-63A8-4420-9D38-9B9144F4015C}.Debug|Any CPU.ActiveCfg = Debug
+		{0E85873D-63A8-4420-9D38-9B9144F4015C}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

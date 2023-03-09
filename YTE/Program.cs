@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Zmem
+namespace Yte
 {
     internal static class Program
     {
